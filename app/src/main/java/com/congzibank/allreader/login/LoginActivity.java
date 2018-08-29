@@ -2,10 +2,10 @@ package com.congzibank.allreader.login;
 
 import android.support.v7.widget.AppCompatButton;
 import android.view.View;
-import android.widget.Button;
 
 import com.congzibank.allreader.R;
 import com.congzibank.allreader.base.BaseCompatActivity;
+import com.congzibank.allreader.utils.StatusBarUtil;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -23,7 +23,7 @@ public class LoginActivity extends BaseCompatActivity{
 
 
     @BindView(R.id.btn_login)
-    private AppCompatButton mLoginButton;
+    public AppCompatButton mLoginButton;
 
     @Override
     protected int initLayoutRes() {
@@ -33,8 +33,13 @@ public class LoginActivity extends BaseCompatActivity{
 
     @OnClick(R.id.btn_login)
     public void onLoginClick(View view) {
-        //使用路由进行跳转
+       // 路由进入
     }
 
-
+    @Override
+    protected void initBeforSetView() {
+        super.initBeforSetView();
+        StatusBarUtil.StatusBarDarkMode(this, 3);
+        StatusBarUtil.setStatusBarColor(this, R.color.white);
+    }
 }
