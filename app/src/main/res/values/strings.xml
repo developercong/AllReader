@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">AllReader</string>
+    <string name="app_title">无二阅读</string>
+    <string name="log_in">登陆</string>
 </resources>

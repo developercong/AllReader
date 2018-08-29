@@ -60,7 +60,7 @@ public class BaseCompatActivity extends HandleIntentActivity{
     /**
      * 初始化界面，如果子界面不返回则直接退出
      */
-    protected void setUpContentView() {
+    private void setUpContentView() {
         if (initLayoutRes() > 0 ){
             setContentView(initLayoutRes());
         } else {
