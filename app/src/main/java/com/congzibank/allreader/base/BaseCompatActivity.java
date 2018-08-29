@@ -41,31 +41,33 @@ public class BaseCompatActivity extends HandleIntentActivity{
     /**
      * 在界面加载中设置的数据
      */
-    private void setUpDate() {
+    protected void setUpDate() {
     }
 
     /**
      * 初始化布局的一些方法
      * 在绑定了butterknife之后使用
      */
-    private void setUpViewAfterBind() {
+    protected void setUpViewAfterBind() {
     }
 
     /**
      * 在设置界面之前的初始化方法
      */
-    private void initBeforSetView() {
+    protected void initBeforSetView() {
     }
 
     /**
      * 初始化界面，如果子界面不返回则直接退出
      */
-    private void setUpContentView() {
-        if (initLayoutRes() > 0)
+    protected void setUpContentView() {
+        if (initLayoutRes() > 0 ){
             setContentView(initLayoutRes());
-        finish();
+        } else {
+            finish();
+        }
     }
-    private int initLayoutRes() {
+    protected int initLayoutRes() {
         return 0;
     }
 }
