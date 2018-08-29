@@ -1,0 +1,29 @@
+<resources>
+    <string name="icon_gouwuche">\e600</string>
+    <string name="icon_browse">\e6e4</string> 
+    <string name="icon_clock_fill">\e6e8</string>
+    <string name="icon_clock">\e6e9</string>
+    <string name="icon_editor">\e6f5</string>
+    <string name="icon_like_fill">\e707</string>
+    <string name="icon_like">\e708</string>
+    <string name="icon_message">\e70c</string>
+    <string name="icon_message_fill">\e70d</string>
+    <string name="icon_people_fill">\e715</string>
+    <string name="icon_people">\e716</string>
+    <string name="icon_praise_fill">\e71a</string>
+    <string name="icon_setup_fill">\e728</string>
+    <string name="icon_setup">\e729</string>
+    <string name="icon_trash">\e738</string>
+    <string name="icon_trash_fill">\e739</string>
+    <string name="icon_unlock_fill">\e73a</string>
+    <string name="icon_unlock">\e73b</string>
+    <string name="icon_search">\e741</string>
+    <string name="icon_searchfill">\e742</string>
+    <string name="icon_wode">\e62f</string>
+    <string name="icon_xiaoxi">\e630</string>
+    <string name="icon_faxian">\e631</string>
+    <string name="icon_liulan">\e634</string>
+    <string name="icon_shanchu">\e645</string>
+    <string name="icon_setting">\e78e</string>
+    <string name="icon_shujia">\e621</string>
+</resources>
