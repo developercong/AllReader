@@ -1,10 +1,12 @@
 package com.congzibank.allreader.login;
 
+import android.content.Intent;
 import android.support.v7.widget.AppCompatButton;
 import android.view.View;
 
 import com.congzibank.allreader.R;
 import com.congzibank.allreader.base.BaseCompatActivity;
+import com.congzibank.allreader.home.MainActivity;
 import com.congzibank.allreader.utils.StatusBarUtil;
 
 import butterknife.BindView;
@@ -34,12 +36,12 @@ public class LoginActivity extends BaseCompatActivity{
     @OnClick(R.id.btn_login)
     public void onLoginClick(View view) {
        // 路由进入
+        startActivity(new Intent(this, MainActivity.class));
     }
 
     @Override
     protected void initBeforSetView() {
         super.initBeforSetView();
-        StatusBarUtil.StatusBarDarkMode(this, 3);
-        StatusBarUtil.setStatusBarColor(this, R.color.white);
+
     }
 }

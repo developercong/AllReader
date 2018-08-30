@@ -1,29 +1,20 @@
 package com.congzibank.allreader.home;
 
 import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.congzibank.allreader.R;
 import com.congzibank.allreader.base.BaseCompatActivity;
 import com.congzibank.allreader.home.adapter.MainFragmentpagerAdapter;
-import com.congzibank.allreader.home.base.BaseMainFragment;
+import com.congzibank.allreader.home.data.DataGenerator;
 import com.congzibank.allreader.view.textview.IconFontView;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 /**
+ * @author cong_wang
  * home activity show bookstore readhistoty me discuss tab
  */
 public class MainActivity extends BaseCompatActivity {
@@ -33,12 +24,7 @@ public class MainActivity extends BaseCompatActivity {
 
     @BindView(R.id.view_pager)
     public ViewPager mViewPager;
-
-    @BindView(R.id.search_container)
-    public LinearLayout mSearchContainer;
-
-    private static final String[] mBottomTitles = new String[]{"发现", "书架", "讨论", "我"};
-    private static final int[] mBottomIcon = new int[]{R.string.icon_browse, R.string.icon_shujia, R.string.icon_message, R.string.icon_wode};
+    private MainFragmentpagerAdapter adapter;
 
     @Override
     protected int initLayoutRes() {
@@ -52,38 +38,63 @@ public class MainActivity extends BaseCompatActivity {
     }
 
     private void initViewPager() {
-        mViewPager.setAdapter(new MainFragmentpagerAdapter(getSupportFragmentManager(), initFragments()));
+        adapter = new MainFragmentpagerAdapter(getSupportFragmentManager(), DataGenerator.initFragments());
+        mViewPager.setAdapter(adapter);
     }
 
     private void initTabLayout() {
-        for (int i = 0; i < 4; i++) {
-            mBottomTab.addTab(initTabItem(i));
+        TabSelectListener listener = new TabSelectListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                super.onTabSelected(tab);
+                selectTab(tab);
+            }
+        };
+        mBottomTab.addOnTabSelectedListener(listener);
+//        mBottomTab.setupWithViewPager(mViewPager);
+        //setUpVithViewPager时会删除我们的自定义view,导致tab不显示
+        for (int i = 0; i < adapter.getCount(); i++) {
+            mBottomTab.addTab(mBottomTab.newTab().setCustomView(DataGenerator.initTabView(this, i)));
         }
-        mBottomTab.setupWithViewPager(mViewPager);
+        mBottomTab.getTabAt(0).select();
     }
 
-    private List<BaseMainFragment> initFragments() {
-        List<BaseMainFragment> fragments = new ArrayList<>();
-        //TODO 添加不同类型的fragment
-        fragments.add(null);
-        fragments.add(null);
-        fragments.add(null);
-        fragments.add(null);
-        return fragments;
+    private void selectTab(TabLayout.Tab tab) {
+        mViewPager.setCurrentItem(tab.getPosition());
+        for (int i = 0 ; i < mBottomTab.getTabCount(); i++) {
+            View view = mBottomTab.getTabAt(i).getCustomView();
+            if (view == null) return;
+            IconFontView icon = view.findViewById(R.id.icon_tab);
+            TextView title = view.findViewById(R.id.icon_title);
+            if (i == tab.getPosition()) {
+                //设置颜色
+                icon.setTextColor(getResources().getColor(R.color.colorPrimary));
+                title.setTextColor(getResources().getColor(R.color.colorPrimary));
+            } else {
+                icon.setTextColor(getResources().getColor(R.color.text_color_half_black));
+                title.setTextColor(getResources().getColor(R.color.text_color_half_black));
+            }
+        }
     }
 
-    @BindView(R.id.icon_tab)
-    public IconFontView fontView;
-    @BindView(R.id.icon_title)
-    public TextView fontTitle;
 
-    private TabLayout.Tab initTabItem(int i) {
-        TabLayout.Tab tab = mBottomTab.newTab();
-        View view = LayoutInflater.from(this).inflate(R.layout.item_tab_bootm, null);
-        ButterKnife.bind(this, view);
-        tab.setCustomView(view);
-        fontTitle.setText(mBottomTitles[i]);
-        fontView.setText(getResources().getText(mBottomIcon[i]));
-        return tab;
+    public static class TabSelectListener implements TabLayout.OnTabSelectedListener {
+
+        @Override
+        public void onTabSelected(TabLayout.Tab tab) {
+
+        }
+
+        @Override
+        public void onTabUnselected(TabLayout.Tab tab) {
+
+        }
+
+        @Override
+        public void onTabReselected(TabLayout.Tab tab) {
+
+        }
     }
+
+
 }

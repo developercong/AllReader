@@ -4,31 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/background_color_gery"
     tools:context="com.congzibank.allreader.home.MainActivity">
 
     <android.support.design.widget.TabLayout
         android:id="@+id/tab_bottom"
         android:layout_width="match_parent"
+        android:background="@color/white"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:tabBackground="@android:color/transparent"
         app:tabGravity="fill"
+        android:elevation="15dp"
         app:tabIndicatorHeight="0dp"
         app:tabMode="fixed">
 
     </android.support.design.widget.TabLayout>
 
-    <LinearLayout
-        android:id="@+id/search_container"
-        android:layout_width="0dp"
-        android:layout_height="40dp"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-    </LinearLayout>
 
     <com.congzibank.allreader.view.viewpager.NoScrollViewPager
         android:id="@+id/view_pager"
@@ -37,7 +31,7 @@
         app:layout_constraintBottom_toTopOf="@+id/tab_bottom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search_container">
+        app:layout_constraintTop_toTopOf="parent">
     </com.congzibank.allreader.view.viewpager.NoScrollViewPager>
 
 </android.support.constraint.ConstraintLayout>

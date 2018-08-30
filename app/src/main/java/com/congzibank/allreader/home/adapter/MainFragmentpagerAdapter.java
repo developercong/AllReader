@@ -3,6 +3,7 @@ package com.congzibank.allreader.home.adapter;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+import android.view.View;
 import android.view.ViewGroup;
 
 import com.congzibank.allreader.home.base.BaseMainFragment;
@@ -10,6 +11,10 @@ import com.congzibank.allreader.utils.util;
 
 import java.util.List;
 
+/**
+ * 主界面fragment 适配器
+ * @author cong_wang
+ */
 public class MainFragmentpagerAdapter extends FragmentStatePagerAdapter {
 
     private List<BaseMainFragment> fragments;
@@ -37,4 +42,5 @@ public class MainFragmentpagerAdapter extends FragmentStatePagerAdapter {
     public void destroyItem(ViewGroup container, int position, Object object) {
         super.destroyItem(container, position, object);
     }
+
 }
