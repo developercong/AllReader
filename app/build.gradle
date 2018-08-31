@@ -50,4 +50,6 @@ dependencies {
     compile ('com.alibaba.android:vlayout:1.2.17@aar') {
         transitive = true
     }
+
+    implementation 'com.blankj:utilcode:1.19.4'
 }

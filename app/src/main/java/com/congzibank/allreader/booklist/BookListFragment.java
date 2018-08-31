@@ -6,6 +6,7 @@ import android.view.View;
 import com.alibaba.android.vlayout.DelegateAdapter;
 import com.alibaba.android.vlayout.VirtualLayoutManager;
 import com.congzibank.allreader.R;
+import com.congzibank.allreader.booklist.adapter.BookListAdapter;
 import com.congzibank.allreader.booklist.adapter.BookListSearchAdapter;
 import com.congzibank.allreader.booklist.base.BaseBookPartAdapter;
 import com.congzibank.allreader.booklist.base.BookListDelegateAdapter;
@@ -35,15 +36,15 @@ public class BookListFragment extends BaseMainFragment{
         layoutManager = new VirtualLayoutManager(mContext);
         mBookListRecyclerView.setLayoutManager(layoutManager);
         delegateAdapter = new BookListDelegateAdapter(layoutManager);
-        initAdapters();
-        delegateAdapter.setAdapters(bookListAdapter);
+        delegateAdapter.setAdapters(initAdapters());
         mBookListRecyclerView.setAdapter(delegateAdapter);
     }
 
-    private List<DelegateAdapter.Adapter> bookListAdapter;
-    private void initAdapters() {
-        bookListAdapter = new ArrayList<>();
+    private List<DelegateAdapter.Adapter> initAdapters() {
+        List<DelegateAdapter.Adapter> bookListAdapter = new ArrayList<>();
         bookListAdapter.add(new BookListSearchAdapter());
+        bookListAdapter.add(new BookListAdapter());
+        return bookListAdapter;
     }
 
     @Override
