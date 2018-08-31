@@ -3,11 +3,28 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/toolbar"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    >
+    android:layout_height="?attr/actionBarSize"
+    app:navigationIcon="@drawable/ic_headbar_back">
 
     <TextView
+        android:id="@+id/tv_toolbar_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:singleLine="true"
+        android:textColor="@color/text_color_black"
+        android:textSize="18dp"
         android:text="@string/app_title" />
+
+    <com.congzibank.allreader.view.textview.IconFontView
+        android:id="@+id/icon_toolbar_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:layout_marginRight="15dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:maxWidth="120dp"
+        android:textSize="14dp" />
 </android.support.v7.widget.Toolbar>

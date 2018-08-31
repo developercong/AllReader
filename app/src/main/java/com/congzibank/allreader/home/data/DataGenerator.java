@@ -1,14 +1,13 @@
 package com.congzibank.allreader.home.data;
 
 import android.content.Context;
-import android.support.design.widget.TabLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 
 import com.congzibank.allreader.R;
 import com.congzibank.allreader.home.base.BaseMainFragment;
-import com.congzibank.allreader.home.fragment.BookListFragment;
+import com.congzibank.allreader.booklist.BookListFragment;
 import com.congzibank.allreader.home.fragment.CommunityFragment;
 import com.congzibank.allreader.home.fragment.DiscoryFragment;
 import com.congzibank.allreader.home.fragment.ProfileFragment;

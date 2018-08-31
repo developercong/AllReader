@@ -1,6 +1,7 @@
 <resources>
     <string name="icon_gouwuche" translatable="false">\ue600</string>
-    <string name="icon_browse" translatable="false">\ue6e4</string> 
+    <string name="icon_lishi" translatable="false">\ue8ad</string>
+    <string name="icon_browse" translatable="false">\ue6e4</string>
     <string name="icon_clock_fill" translatable="false">\ue6e8</string>
     <string name="icon_clock" translatable="false">\ue6e9</string>
     <string name="icon_editor" translatable="false">\ue6f5</string>
