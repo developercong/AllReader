@@ -96,5 +96,8 @@ public class MainActivity extends BaseCompatActivity {
         }
     }
 
-
+    @Override
+    public void changeTabLayout(boolean selected) {
+        super.changeTabLayout(selected);
+    }
 }

@@ -23,4 +23,10 @@ public abstract class HandleIntentActivity extends AppCompatActivity {
     }
 
     public abstract void realHandleIntent(Intent intent);
+
+    public  void changeTabLayout(boolean selected){
+
+    }
+
+
 }

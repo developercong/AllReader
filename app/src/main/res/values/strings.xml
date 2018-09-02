@@ -2,4 +2,7 @@
     <string name="app_name">AllReader</string>
     <string name="app_title">无二阅读</string>
     <string name="log_in">登陆</string>
+    <string name="edit">编辑</string>
+    <string name="select_book">选择书籍</string>
+    <string name="book_list">书架</string>
 </resources>
