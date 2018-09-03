@@ -4,7 +4,7 @@ package com.congzibank.allreader.home.data;
  * @author wangcong
  * book that is selected
  */
-public class SelectBook {+
+public class SelectBook {
 
     private String bookName;
     private String bookUrl;

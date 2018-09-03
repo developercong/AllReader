@@ -11,6 +11,7 @@ public class TabItem {
     private int unselectIconId;
     private int selectColor;
     private int unbselectColor;
+    private int iconId;
 
     private TabStatus status;
     private boolean enable;

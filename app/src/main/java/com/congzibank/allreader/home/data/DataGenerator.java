@@ -58,7 +58,7 @@ public class DataGenerator {
 
     public void onBookSelected(List<SelectBook> books) {
         if(books == null || books.size() == 0) {
-            listener.onTabChange();
+//            listener.onTabChange();
             // oncallback empty selected
         } else {
             //callback selected book
@@ -75,7 +75,7 @@ public class DataGenerator {
         fragments.add(new ProfileFragment());
         return fragments;
     }
-    public static View initTabView(Context context, int position, HandleIntentActivity.TabStatus status) {
+    public static View initTabView(Context context, int position/*, HandleIntentActivity.TabStatus status*/) {
         View view = LayoutInflater.from(context).inflate(R.layout.item_tab_bootm, null);
         ((TextView)view.findViewById(R.id.icon_title)).setText(mBottomTitles[position]);
         ((IconFontView)view.findViewById(R.id.icon_tab)).setText(mBottomIcon[position]);
