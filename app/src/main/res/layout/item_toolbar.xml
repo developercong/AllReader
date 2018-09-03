@@ -2,6 +2,7 @@
 <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/toolbar"
+    android:backgroundTint="@color/white"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
     app:navigationIcon="@drawable/ic_headbar_back">
@@ -28,4 +29,6 @@
         android:gravity="center"
         android:maxWidth="120dp"
         android:textSize="14dp" />
+
 </android.support.v7.widget.Toolbar>
+

@@ -5,6 +5,7 @@ import android.view.View;
 
 import com.alibaba.android.vlayout.DelegateAdapter;
 import com.alibaba.android.vlayout.VirtualLayoutManager;
+import com.blankj.utilcode.util.ConvertUtils;
 import com.congzibank.allreader.R;
 import com.congzibank.allreader.booklist.adapter.BookListAdapter;
 import com.congzibank.allreader.booklist.adapter.BookListSearchAdapter;
@@ -42,6 +43,21 @@ public class BookListFragment extends BaseMainFragment {
         delegateAdapter = new BookListDelegateAdapter(layoutManager);
         delegateAdapter.setAdapters(initAdapters());
         mBookListRecyclerView.setAdapter(delegateAdapter);
+        mBookListRecyclerView.addOnScrollListener(new RecyclerView.OnScrollListener() {
+            @Override
+            public void onScrollStateChanged(RecyclerView recyclerView, int newState) {
+                if (newState == RecyclerView.SCROLL_STATE_DRAGGING){
+                    mToolbar.setElevation(ConvertUtils.dp2px(5));
+                }
+
+            }
+
+            @Override
+            public void onScrolled(RecyclerView recyclerView, int dx, int dy) {
+                super.onScrolled(recyclerView, dx, dy);
+
+            }
+        });
 
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
