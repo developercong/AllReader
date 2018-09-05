@@ -7,7 +7,7 @@ import android.view.View;
 import com.congzibank.allreader.R;
 import com.congzibank.allreader.base.BaseCompatActivity;
 import com.congzibank.allreader.home.MainActivity;
-import com.congzibank.allreader.utils.StatusBarUtil;
+import com.sankuai.waimai.router.Router;
 
 import butterknife.BindView;
 import butterknife.OnClick;
@@ -32,11 +32,10 @@ public class LoginActivity extends BaseCompatActivity{
         return R.layout.activity_login;
     }
 
-
     @OnClick(R.id.btn_login)
     public void onLoginClick(View view) {
-       // 路由进入
-        startActivity(new Intent(this, MainActivity.class));
+            // 路由进入
+        Router.startUri(this, "/main");
     }
 
     @Override

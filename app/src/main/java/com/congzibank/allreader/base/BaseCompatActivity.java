@@ -5,10 +5,12 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.widget.TextView;
 
 
 import com.congzibank.allreader.R;
+import com.congzibank.allreader.login.LoginActivity;
 import com.congzibank.allreader.view.textview.IconFontView;
 
 import butterknife.BindView;
@@ -36,7 +38,6 @@ public class BaseCompatActivity extends HandleIntentActivity{
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         initBeforSetView();
 
         setUpContentView();

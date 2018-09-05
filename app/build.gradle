@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'org.greenrobot.greendao'
+apply plugin: 'WMRouter'
 
 android {
     compileSdkVersion 27
@@ -50,6 +51,7 @@ dependencies {
     compile ('com.alibaba.android:vlayout:1.2.17@aar') {
         transitive = true
     }
-
+    implementation 'com.sankuai.waimai.router:router:1.0.41'
+    annotationProcessor 'com.sankuai.waimai.router:compiler:1.0.41'
     implementation 'com.blankj:utilcode:1.19.4'
 }

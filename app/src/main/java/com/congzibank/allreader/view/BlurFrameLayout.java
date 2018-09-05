@@ -9,6 +9,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.widget.FrameLayout;
+import android.widget.PopupWindow;
 
 import com.facebook.drawee.backends.pipeline.Fresco;
 
@@ -44,7 +45,7 @@ public class BlurFrameLayout extends FrameLayout {
     private void init() {
         paint = new Paint();
         paint.setMaskFilter(new BlurMaskFilter(20, BlurMaskFilter.Blur.INNER));
-        this.setLayerType(1, (Paint)null);
+        this.setLayerType(1, paint);
         this.setWillNotDraw(false);
     }
 

@@ -10,6 +10,7 @@ import com.congzibank.allreader.base.BaseCompatActivity;
 import com.congzibank.allreader.home.adapter.MainFragmentpagerAdapter;
 import com.congzibank.allreader.home.data.DataGenerator;
 import com.congzibank.allreader.view.textview.IconFontView;
+import com.sankuai.waimai.router.annotation.RouterUri;
 
 import butterknife.BindView;
 
@@ -17,6 +18,7 @@ import butterknife.BindView;
  * @author cong_wang
  * home activity show bookstore readhistoty me discuss tab
  */
+@RouterUri(path = "/main")
 public class MainActivity extends BaseCompatActivity {
 
     @BindView(R.id.tab_bottom)

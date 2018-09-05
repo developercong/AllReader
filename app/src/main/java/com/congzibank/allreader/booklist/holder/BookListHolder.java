@@ -1,15 +1,11 @@
 package com.congzibank.allreader.booklist.holder;
 
-import android.net.Uri;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.congzibank.allreader.R;
 import com.congzibank.allreader.base.ButterKnifeViewHolder;
-import com.congzibank.allreader.router.interfaces.Const;
-import com.congzibank.allreader.utils.Constant;
-import com.facebook.drawee.view.SimpleDraweeView;
 
 import butterknife.BindView;
 
