@@ -1,7 +1,5 @@
 package com.congzibank.allreader.utils;
 
-import org.w3c.dom.Node;
-
 /**
  * moni java linkedlist
  */
