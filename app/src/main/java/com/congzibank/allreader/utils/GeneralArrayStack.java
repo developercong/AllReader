@@ -1,7 +1,6 @@
 package com.congzibank.allreader.utils;
 
 import java.lang.reflect.Array;
-import java.util.Arrays;
 
 /**
  * 用数组实现栈
